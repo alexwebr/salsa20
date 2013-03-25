@@ -12,7 +12,7 @@
 
 int main()
 {
-  unsigned len = 100000000;
+  uint32_t len = 100000000;
 
   // We will encrypt 100 MB of memory
   uint8_t *data = (uint8_t *) malloc(len);
