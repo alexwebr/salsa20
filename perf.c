@@ -27,7 +27,7 @@ int main()
       puts("Error: encryption failed");
 
   if (s20_crypt(key, S20_KEYLEN_128, nonce, 0, data, len))
-      puts("Error: encryption failed");
+      puts("Error: decryption failed");
 
   return 0;
 }
