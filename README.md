@@ -56,3 +56,25 @@ all unit tests and test vectors.
 `make clean` will remove the `tests` executable and all object files.
 
 `make cli` will compile the sample program.
+
+`make perf` will compile a simple performance test. It will encrypt
+and then decrypt 100 MB (literally 100,000,000 bytes) on the heap and
+then exit (200 MB total).
+
+
+Performance
+-----------
+
+While not originally designed for speed, this implementation performs
+reasonably well with compiler optimizations enabled. This
+implementation does not make use of CPU-specific performance features,
+so it most likely does not compete with optimized implementations.
+
+**NOTE**: These numbers were obtained with the performance test
+included with this implementation. I'm not sure if this is an
+appropriate way to benchmark a stream cipher. If it is not, please
+let me know!
+
+**Core i7**: 1.123 seconds, or 178 MB/s
+
+**Pentium T4400**: 1.558 seconds, or 128 MB/s
