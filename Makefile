@@ -1,4 +1,3 @@
-# woot
 CFLAGS=-std=c99 -pedantic -Wall -Werror
 
 tests: unit_tests.o
