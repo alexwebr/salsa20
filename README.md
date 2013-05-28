@@ -78,3 +78,5 @@ let me know!
 **Core i7**: 1.123 seconds, or 178 MB/s
 
 **Pentium T4400**: 1.558 seconds, or 128 MB/s
+
+**ARM Cortex-A8 at 1GHz (BeagleBone Black Rev. A5A)**: 6.912 seconds, or 28 MB/s
