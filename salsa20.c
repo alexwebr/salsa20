@@ -150,7 +150,7 @@ enum s20_status_t s20_crypt(uint8_t *key,
                             uint32_t buflen)
 {
   uint8_t keystream[64];
-  // 'n' is the 8-byte nonce (unique message number) concantenated
+  // 'n' is the 8-byte nonce (unique message number) concatenated
   // with the per-block 'counter' value (4 bytes in our case, 8 bytes
   // in the standard). We leave the high 4 bytes set to zero because
   // we permit only a 32-bit integer for stream index and length.
