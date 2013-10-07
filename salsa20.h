@@ -54,7 +54,7 @@ enum s20_keylen_t
  *
  * buf    The data to encrypt or decrypt.
  *
- * len    Length of the data in buf.
+ * buflen Length of the data in buf.
  *
  * This function returns either 0 or 1.
  * A return of 0 indicates that basic sanity checking on parameters
@@ -67,6 +67,6 @@ enum s20_status_t s20_crypt(uint8_t *key,
                             uint8_t nonce[static 8],
                             uint32_t si,
                             uint8_t *buf,
-                            uint32_t len);
+                            uint32_t buflen);
 
 #endif

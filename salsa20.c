@@ -147,7 +147,7 @@ enum s20_status_t s20_crypt(uint8_t *key,
                             uint8_t nonce[static 8],
                             uint32_t si,
                             uint8_t *buf,
-                            uint32_t len)
+                            uint32_t buflen)
 {
   uint8_t keystream[64];
   // 'n' is the 8-byte nonce (unique message number) concantenated
@@ -183,7 +183,7 @@ enum s20_status_t s20_crypt(uint8_t *key,
 
   // Walk over the plaintext byte-by-byte, xoring the keystream with
   // the plaintext and producing new keystream blocks as needed
-  for (i = 0; i < len; ++i) {
+  for (i = 0; i < buflen; ++i) {
     // If we've used up our entire keystream block (or have just begun
     // and happen to be on a block boundary), produce keystream block
     if ((si + i) % 64 == 0) {
