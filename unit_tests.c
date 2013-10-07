@@ -4,16 +4,6 @@
 #include <math.h>
 #include <string.h>
 
-// Prevent multiple declarations of s20_crypt
-#define _SALSA20_H_
-
-// Because we defined _SALSA20_H_, this enum won't be defines unless
-// we do it ourselves right here
-enum s20_keylen_t {
-  S20_KEYLEN_256,
-  S20_KEYLEN_128
-};
-
 // Include the C file directly, so we can access the otherwise static
 // functions
 #include "salsa20.c"
