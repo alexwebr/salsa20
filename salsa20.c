@@ -142,12 +142,12 @@ static void s20_expand32(uint8_t *k,
 
 // Performs up to 2^32-1 bytes of encryption or decryption under a
 // 128- or 256-bit key.
-int s20_crypt(uint8_t *key,
-              enum s20_keylen_t keylen,
-              uint8_t nonce[static 8],
-              uint32_t si,
-              uint8_t *buf,
-              uint32_t len)
+enum s20_status_t s20_crypt(uint8_t *key,
+                            enum s20_keylen_t keylen,
+                            uint8_t nonce[static 8],
+                            uint32_t si,
+                            uint8_t *buf,
+                            uint32_t len)
 {
   uint8_t keystream[64];
   // 'n' is the 8-byte nonce (unique message number) concantenated
@@ -166,7 +166,7 @@ int s20_crypt(uint8_t *key,
 
   // If any of the parameters we received are invalid
   if (expand == NULL || key == NULL || nonce == NULL)
-    return 1;
+    return S20_ERROR;
 
   // Set up the low 8 bytes of n with the unique message number
   for (i = 0; i < 8; ++i)
@@ -195,5 +195,5 @@ int s20_crypt(uint8_t *key,
     buf[i] ^= keystream[(si + i) % 64];
   }
 
-  return 0;
+  return S20_SUCCESS;
 }

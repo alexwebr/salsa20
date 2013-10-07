@@ -5,6 +5,15 @@
 #include <stddef.h>
 
 /**
+ * Return codes for s20_crypt
+ */
+enum s20_status_t
+{
+  S20_SUCCESS,
+  S20_ERROR
+};
+
+/**
  * Key size
  * Salsa20 only permits a 128-bit key or a 256-bit key, so these are
  * the only two options made available by this library.
@@ -53,11 +62,11 @@ enum s20_keylen_t
  * A return of 1 indicates that basic sanity checking on parameters
  * failed and encryption/decryption was not performed.
  */
-int s20_crypt(uint8_t *key,
-              enum s20_keylen_t keylen,
-              uint8_t nonce[static 8],
-              uint32_t si,
-              uint8_t *buf,
-              uint32_t len);
+enum s20_status_t s20_crypt(uint8_t *key,
+                            enum s20_keylen_t keylen,
+                            uint8_t nonce[static 8],
+                            uint32_t si,
+                            uint8_t *buf,
+                            uint32_t len);
 
 #endif
