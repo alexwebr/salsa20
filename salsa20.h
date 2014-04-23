@@ -10,7 +10,7 @@
 enum s20_status_t
 {
   S20_SUCCESS,
-  S20_ERROR
+  S20_FAILURE
 };
 
 /**

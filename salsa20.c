@@ -166,7 +166,7 @@ enum s20_status_t s20_crypt(uint8_t *key,
 
   // If any of the parameters we received are invalid
   if (expand == NULL || key == NULL || nonce == NULL)
-    return S20_ERROR;
+    return S20_FAILURE;
 
   // Set up the low 8 bytes of n with the unique message number
   for (i = 0; i < 8; ++i)
