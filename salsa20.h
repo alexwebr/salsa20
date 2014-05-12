@@ -56,11 +56,11 @@ enum s20_keylen_t
  *
  * buflen Length of the data in buf.
  *
- * This function returns either 0 or 1.
- * A return of 0 indicates that basic sanity checking on parameters
- * succeeded and encryption/decryption was performed.
- * A return of 1 indicates that basic sanity checking on parameters
- * failed and encryption/decryption was not performed.
+ * This function returns either S20_SUCCESS or S20_FAILURE.
+ * A return of S20_SUCCESS indicates that basic sanity checking on
+ * parameters succeeded and encryption/decryption was performed.
+ * A return of S20_FAILURE indicates that basic sanity checking on
+ * parameters failed and encryption/decryption was not performed.
  */
 enum s20_status_t s20_crypt(uint8_t *key,
                             enum s20_keylen_t keylen,
