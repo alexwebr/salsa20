@@ -586,6 +586,15 @@ au_main
   au_eq("sanity: nonce is NULL", status, S20_FAILURE);
 }
 
+{ // Only buf is null
+  uint8_t k[32] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17,
+                    18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 30, 31, 32 };
+  uint8_t n[8] = { 101, 102, 103, 104, 105, 106, 107, 108 };
+
+  int status = s20_crypt(k, S20_KEYLEN_256, n, 0, NULL, 0);
+  au_eq("sanity: buf is NULL", status, S20_FAILURE);
+}
+
 
 // Official test vectors from
 // http://www.ecrypt.eu.org/stream/svn/viewcvs.cgi/ecrypt/trunk/submissions/salsa20/full/verified.test-vectors?logsort=rev&rev=210&view=markup
