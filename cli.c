@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
     uint8_t c = in;
     // Encrypt a single character at a time
     //                          key     128-bit key                 nonce  encrypt one byte
-    if (s20_crypt((uint8_t *) argv[1], S20_KEYLEN_128, (uint8_t *) argv[2], si++, &c, 1))
+    if (s20_crypt((uint8_t *) argv[1], S20_KEYLEN_128, (uint8_t *) argv[2], si++, &c, 1) == S20_ERROR)
       puts("Error: encryption failed");
     putchar(c);
   }
