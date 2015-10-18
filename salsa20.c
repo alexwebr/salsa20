@@ -141,7 +141,7 @@ static void s20_expand32(uint8_t *k,
 
 
 // Performs up to 2^32-1 bytes of encryption or decryption under a
-// 128- or 256-bit key.
+// 128- or 256-bit key and 64-byte nonce.
 enum s20_status_t s20_crypt(uint8_t *key,
                             enum s20_keylen_t keylen,
                             uint8_t nonce[static 8],

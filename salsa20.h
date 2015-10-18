@@ -25,9 +25,9 @@ enum s20_keylen_t
 };
 
 /**
- * Performs up to 2^32-1 bytes of encryption or decryption under a
- * 128- or 256-bit key in blocks of arbitrary size. Permits seeking
- * to any point within a stream.
+ * Encrypts or decrypts messages up to 2^32-1 bytes long, under a 256-
+ * or 128-bit key and a unique 64-byte nonce.  Permits seeking to any
+ * point within a message.
  *
  * key    Pointer to either a 128-bit or 256-bit key.
  *        No key-derivation function is applied to this key, and no
@@ -43,14 +43,9 @@ enum s20_keylen_t
  *        confidentiality.
  *
  * si     Stream index.
- *        The position within the stream. When encrypting/decrypting
- *        a message sequentially from beginning to end in fixed-size
- *        chunks of length L, this value is increased by L on every
- *        call. Care must be taken not to select values that cause
- *        overlap. Example: encrypting 1000 bytes at index 100, and
- *        then encrypting 1000 bytes at index 500. Doing so will
- *        result in keystream reuse, which destroys message
- *        confidentiality.
+ *        This is for seeking within a larger message. If you are only
+ *        working with small messages that are encrypted/decrypted all
+ *        at once (like TLS records), this will always be 0.
  *
  * buf    The data to encrypt or decrypt.
  *
