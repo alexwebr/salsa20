@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 #
 # Convert a trimmed version of the verfied test vectors
@@ -30,7 +30,7 @@ for i in {1..4}; do
   echo "    $(echo "$stream" | awk '{print $NF}' | sed 's/\(..\)/0x\1, /g' | sed 's/ $//')"
   read stream
   echo "    $(echo "$stream" | awk '{print $NF}' | sed 's/\(..\)/0x\1, /g' | sed 's/ $//') };"
-  echo "  s20_crypt(key, 256, n, $index, keystream, 64);"
+  echo "  s20_crypt(key, S20_KEYLEN_256, n, $index, keystream, 64);"
   echo "  au_eq(\"256-bit test vector, $name\", memcmp(keystream, expected, 64), 0);"
   echo "}"
   echo ""
@@ -41,4 +41,4 @@ read xor
 read xor
 read xor
 
-done
+done > $2
