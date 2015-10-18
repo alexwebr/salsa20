@@ -61,6 +61,9 @@ all unit tests and test vectors.
 and then decrypt 100 MB (literally 100,000,000 bytes) on the heap and
 then exit (200 MB total).
 
+All commits from October 18th onwards should be signed under my GPG
+public key. This can be seen with `git log --show-signature`.
+
 
 Performance
 -----------
