@@ -50,8 +50,11 @@ a single function provided by this library: `s20_crypt`.
 Usage
 -----
 
+On the BSDs you will need `gmake` and `bash`.
+
 `make tests` will generate an executable called `tests` containing
-all unit tests and test vectors.
+all unit tests and test vectors. This may need several minutes and
+upwards of 1GB of memory. Once compiled, they are fast to execute.
 
 `make clean` will remove the `tests` executable and all object files.
 

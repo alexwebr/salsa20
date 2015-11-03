@@ -1,5 +1,3 @@
-#!/bin/bash
-
 #
 # Convert a trimmed version of the verfied test vectors
 # to C code to be included in unit tests

@@ -1,5 +1,5 @@
 CFLAGS=-O3 -std=c99 -pedantic -Wall -Werror
-SHELL := /bin/bash
+SHELL := bash
 
 .PHONY: clean all
 
