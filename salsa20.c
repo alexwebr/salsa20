@@ -42,9 +42,9 @@ static void s20_doubleround(uint32_t x[static 16])
 static uint32_t s20_littleendian(uint8_t *b)
 {
   return b[0] +
-         (b[1] << 8) +
-         (b[2] << 16) +
-         (b[3] << 24);
+         ((uint_fast16_t) b[1] << 8) +
+         ((uint_fast32_t) b[2] << 16) +
+         ((uint_fast32_t) b[3] << 24);
 }
 
 // Moves the little-endian word into the 4 bytes pointed to by b
